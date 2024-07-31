@@ -3,6 +3,8 @@
  */
 package sample.java.gradle;
 
+import com.example.CustomLogger;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -10,5 +12,8 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+
+        CustomLogger logger = new CustomLogger();
+        logger.doIt();
     }
 }

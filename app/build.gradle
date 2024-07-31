@@ -22,11 +22,28 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
+
+    implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
+    implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
 }
 
 application {
     // Define the main class for the application.
     mainClass = 'sample.java.gradle.App'
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
+
+tasks {
+    processResources {
+        duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.INCLUDE
+    }
 }
 
 tasks.named('test') {
